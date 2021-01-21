@@ -1,0 +1,50 @@
+﻿@model StorageProject.Models.UsedMaterial
+
+@{
+    ViewBag.Title = "Подробнее";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityOfMaterial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityOfMaterial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materials.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materials.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Technics.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Technics.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @Html.ActionLink("Вернуться к списку", "Index")
+</p>

@@ -1,0 +1,54 @@
+﻿@{
+                /**/
+
+                ViewBag.Title = "Главная страница";
+}
+@if (User.IsInRole("Administrator") || User.IsInRole("Worker") || User.IsInRole("Superior"))
+{
+    <div class="jumbotron">
+        <h1>Материалы на складе</h1>
+        <p class="lead">Перейти к списку материалов</p>
+        <p><a href="~/Materials" class="btn btn-primary btn-lg">Перейти &raquo;</a></p>
+    </div>
+    <div class="jumbotron">
+        <h1>Израсходованные материалы</h1>
+        <p class="lead">Перейти к списку материалов</p>
+        <p><a href="~/UsedMaterials" class="btn btn-primary btn-lg">Перейти &raquo;</a></p>
+    </div>
+
+
+    if (User.IsInRole("Superior") || User.IsInRole("Administrator"))
+
+    {
+
+        <div class="jumbotron">
+            <h1>Список техники</h1>
+            <p class="lead">Техника, на которую расходуется материал</p>
+            <p><a href="~/Technics" class="btn btn-primary btn-lg">Перейти &raquo;</a></p>
+        </div>
+    }
+
+    if (User.IsInRole("Administrator"))
+    {
+        <div class="jumbotron">
+            <h1>Список пользователей</h1>
+            <p class="lead">Пользователи сайта</p>
+            <p><a href="~/Admin" class="btn btn-primary btn-lg">Перейти &raquo;</a></p>
+        </div>
+
+    }
+    if (User.IsInRole("Worker"))
+    {
+        <div class="jumbotron">
+            <h1>Средний расход материалов за период</h1>
+            <p class="lead">Перейти к списку материалов</p>
+            <p><a href="~/AvgMaterials" class="btn btn-primary btn-lg">Перейти &raquo;</a></p>
+        </div>
+
+    }
+
+}
+else
+{
+    <h2>Вам нужно выполнить вход перед началом работы!</h2>
+}

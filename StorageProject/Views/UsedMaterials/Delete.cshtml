@@ -1,0 +1,56 @@
+﻿@model StorageProject.Models.UsedMaterial
+
+@{
+    ViewBag.Title = "Удалить запись";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Вы уверены, что хотите удалить запись об израсходованном материале?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfUse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfUse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuantityOfMaterial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuantityOfMaterial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materials.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materials.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Technics.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Technics.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться к списку", "Index")
+        </div>
+    }
+</div>
